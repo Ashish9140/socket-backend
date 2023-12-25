@@ -13,8 +13,8 @@ app.get('/', (req, res) => {
 });
 
 // socket connection
-// const io = require('socket.io')(server);
-// Socket(io);
+const io = require('socket.io')(server);
+Socket(io);
 
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
