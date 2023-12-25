@@ -6,7 +6,7 @@ const cors= require("cors");
 const app = express();
 const server = http.createServer(app);
 const PORT = process.env.PORT || 8000;
-app.use(cors);
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send("Hello From Backend");
