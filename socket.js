@@ -24,15 +24,8 @@ function Socket(io) {
         // Handle messages from both web and app users
         socket.on('messageFromUser', (message) => {
           console.log('Message from user:', message);
-
           console.log(message);
-          
-          // Broadcast the message based on user type
-          if (userType === 'web') {
-            io.to(websiteRoom).emit('messageToWebsite', message);
-          } else {
-            io.to(appRoom).emit('messageToApp', message);
-          }
+          io.to(websiteRoom).emit('messageToWebsite', message);
         });
         
         socket.on('disconnect', () => {
